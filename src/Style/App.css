@@ -1,0 +1,21 @@
+.wrapper {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: auto;
+}
+
+input,
+button {
+    display: grid;
+    margin-bottom: 10px;
+    font-size: large;
+    width: 250px;
+}
+
+textarea {
+    width: 300px;
+    height: 150px;
+}

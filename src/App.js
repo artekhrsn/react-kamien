@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./Style/App.css";
+import RandomUserList from "./Components/RandomUserList";
+import RandomTextList from "./Components/RandomTextList";
+import Form from "./Components/Form";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {};
+
+  render() {
+    return (
+      <React.Fragment>
+        <Form />
+        <RandomTextList />
+        <img
+          src="https://image.shutterstock.com/image-illustration/january-6-2019-caricature-bill-260nw-1275457543.jpg"
+          alt="Bill Gates"
+        />
+        <RandomUserList />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
