@@ -1,3 +1,5 @@
+import React from "react";
+
 export const data = {
   content: [
     { id: 1, text: "Jutro zaczyna się dziś!" },
@@ -13,3 +15,11 @@ export const data = {
     { id: 5, text: "Myśl poza schematami" }
   ]
 };
+
+const GetData = () => {
+  const text = data.content;
+  const index = Math.floor(Math.random() * text.length);
+  return text[index].text;
+};
+
+export default GetData;

@@ -6,7 +6,8 @@ const API_USER = "https://us-central1-react-mspm.cloudfunctions.net/api/people";
 class RandomUserList extends React.Component {
   state = {
     userList: [],
-    isLoaded: false
+    isLoaded: false,
+    isClicked: false
   };
   componentDidMount() {
     this.handleDataFetch();
@@ -22,6 +23,7 @@ class RandomUserList extends React.Component {
       })
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         this.setState({
           userList: data,
           isLoaded: true
@@ -31,10 +33,13 @@ class RandomUserList extends React.Component {
         console.log(error);
       });
   };
+  showDetails = () => {
+    console.log("klik!");
+  };
   render() {
     const users = this.state.userList;
     return (
-      <div>
+      <div onClick={this.showDetails}>
         {this.state.isLoaded ? (
           <PeopleList people={users} />
         ) : (
