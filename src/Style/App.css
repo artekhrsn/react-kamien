@@ -1,3 +1,22 @@
+.card {
+    margin: 5% 25%;
+    display: inline-block;
+    justify-content: center;
+    text-align: left;
+    border: 2px solid black;
+}
+
+div {
+    margin: 10px;
+    font-size: 20px;
+    padding: 2px;
+    text-align: center;
+}
+
+img {
+    margin: 5% 30%;
+}
+
 nav {
     background-color: whitesmoke;
 }
