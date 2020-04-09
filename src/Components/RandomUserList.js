@@ -1,8 +1,7 @@
 import React from "react";
 import PeopleList from "./PeopleList";
 import Person from "./Person";
-
-const API_USER = "https://us-central1-react-mspm.cloudfunctions.net/api/people";
+import getUsers from "../Service/UserService";
 
 class RandomUserList extends React.Component {
   state = {
@@ -11,31 +10,17 @@ class RandomUserList extends React.Component {
     isClicked: false,
   };
   componentDidMount() {
-    this.handleDataFetch();
-  }
-  handleDataFetch = () => {
-    fetch(API_USER)
-      .then((response) => {
-        if (response.ok) {
-          console.log(response);
-          return response;
-        }
-        throw Error(response.status);
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        this.setState({
-          userList: data,
-          isLoaded: true,
-          isClicked: false,
-          person: null,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
+    getUsers().then((data) => {
+      console.log(data);
+      this.setState({
+        userList: data,
+        isLoaded: true,
+        isClicked: false,
+        person: null,
       });
-  };
+    });
+  }
+
   showPerson = (id) => {
     const personId = id;
     console.log("klikam na osobe o id: ", personId);
